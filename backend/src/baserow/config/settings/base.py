@@ -11,6 +11,23 @@ from corsheaders.defaults import default_headers
 
 from baserow.version import VERSION
 
+# sentry setup
+# ============
+
+import sentry_sdk
+from sentry_sdk.integrations.django import DjangoIntegration
+from sentry_sdk.integrations.celery import CeleryIntegration
+
+sentry_sdk.init(
+    dsn="https://f7a7fa7dfe5f412f852c3bfe2defa091@o968582.ingest.sentry.io/6742581",
+    integrations=[DjangoIntegration(), CeleryIntegration()],
+    traces_sample_rate=1.0,
+    send_default_pii=True,
+)
+
+# sentry setup end
+# ================
+
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 BASEROW_PLUGIN_DIR_PATH = Path(os.environ.get("BASEROW_PLUGIN_DIR", "/baserow/plugins"))
