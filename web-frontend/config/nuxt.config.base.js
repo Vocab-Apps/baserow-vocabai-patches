@@ -42,6 +42,16 @@ export default function (
   const modules = baseModules.concat(additionalModules)
   return {
     modules,
+    sentry: {
+      dsn: 'https://33f709910b214ed282315bd91344bae0@o968582.ingest.sentry.io/6742673',
+      config: {
+      },
+      publishRelease: {
+        authToken: '9b89e612331511edbbd996b6a33f5072',
+        org: 'language-tools',
+        project: 'baserow-vocabai-frontend',
+      }      
+    },    
     build: {
       extend(config, ctx) {
         config.node = { fs: 'empty' }
