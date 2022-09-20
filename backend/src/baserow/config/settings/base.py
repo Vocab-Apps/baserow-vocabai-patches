@@ -153,6 +153,8 @@ CELERY_TASK_ROUTES = {
     "baserow.core.usage.tasks": {"queue": BASEROW_GROUP_STORAGE_USAGE_QUEUE},
     "baserow.contrib.database.table.tasks.run_row_count_job": {"queue": "export"},
     "baserow.core.jobs.tasks.clean_up_jobs": {"queue": "export"},
+    # cloudlanguagetools jobs go on a separate queue
+    "*cloudlanguagetools*": {"queue": "cloudlanguagetools"},
 }
 CELERY_SOFT_TIME_LIMIT = 60 * 5  # 5 minutes
 CELERY_TIME_LIMIT = CELERY_SOFT_TIME_LIMIT + 60  # 60 seconds
