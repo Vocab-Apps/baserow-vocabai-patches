@@ -348,7 +348,7 @@ case "$1" in
     ;;
     celery-cloudlanguagetoolsworker)
       echo "Running celery cloudlanguagetools worker..."
-      start_celery_worker -Q cloudlanguagetools -n cloudlanguagetools-worker@%h "${@:2}"
+      start_celery_worker --concurrency 2 -Q cloudlanguagetools -n cloudlanguagetools-worker@%h "${@:2}"
     ;;    
     celery-beat)
       # Delay the beat startup as there seems to be bug where the other celery workers
