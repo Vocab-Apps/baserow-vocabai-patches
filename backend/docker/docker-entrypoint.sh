@@ -352,6 +352,7 @@ case "$1" in
       exec celery -A baserow inspect ping -d "export-worker@$HOSTNAME" -t 10 "${@:2}"
     ;;
     celery-cloudlanguagetoolsworker)
+      echo "Running celery cloudlanguagetools worker..."
       start_celery_worker -Q cloudlanguagetools -n cloudlanguagetools-worker@%h "${@:2}"
     ;;    
     celery-beat)
