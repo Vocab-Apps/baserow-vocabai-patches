@@ -346,6 +346,9 @@ case "$1" in
       echo "Running celery export worker healthcheck..."
       exec celery -A baserow inspect ping -d "export-worker@$HOSTNAME" -t 10 "${@:2}"
     ;;
+    celery-cloudlanguagetoolsworker)
+      start_celery_worker -Q cloudlanguagetools -n cloudlanguagetools-worker@%h "${@:2}"
+    ;;    
     celery-beat)
       # Delay the beat startup as there seems to be bug where the other celery workers
       # starting up interfere with or break the lock obtained by it. Without this the
