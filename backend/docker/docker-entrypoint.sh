@@ -316,8 +316,9 @@ case "$1" in
       exec celery -A baserow inspect ping -d "export-worker@$HOSTNAME" -t 10 "${@:2}"
     ;;
     celery-cloudlanguagetoolsworker)
-      echo "Running celery cloudlanguagetools worker..."
-      start_celery_worker --concurrency 2 -Q cloudlanguagetools -n cloudlanguagetools-worker@%h "${@:2}"
+      BASEROW_CELERY_CLT_WORKER_NUM=${BASEROW_CELERY_CLT_WORKER_NUM:-2}
+      echo "Running celery cloudlanguagetools worker with ${BASEROW_CELERY_CLT_WORKER_NUM} workers..."
+      start_celery_worker --concurrency ${BASEROW_CELERY_CLT_WORKER_NUM} -Q cloudlanguagetools -n cloudlanguagetools-worker@%h "${@:2}"
     ;;    
     celery-beat)
       # Delay the beat startup as there seems to be bug where the other celery workers
