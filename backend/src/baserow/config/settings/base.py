@@ -47,11 +47,17 @@ import sentry_sdk
 from sentry_sdk.integrations.django import DjangoIntegration
 from sentry_sdk.integrations.celery import CeleryIntegration
 
+def sentry_filter_transactions(event, hint):
+    if event['transaction'] == '/_health/':
+        return None
+    return event
+
 sentry_sdk.init(
     dsn="https://f7a7fa7dfe5f412f852c3bfe2defa091@o968582.ingest.sentry.io/6742581",
     integrations=[DjangoIntegration(), CeleryIntegration()],
     traces_sample_rate=1.0,
     send_default_pii=True,
+    before_send=sentry_filter_transactions
 )
 
 # sentry setup end
