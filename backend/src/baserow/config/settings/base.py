@@ -21,8 +21,8 @@ from sentry_sdk.integrations.django import DjangoIntegration
 from sentry_sdk.integrations.celery import CeleryIntegration
 
 def sentry_filter_transactions(event, hint):
-    if event['transaction'] == '/_health/':
-        return None
+    # if event['transaction'] == '/_health/':
+    #     return None
     return event
 
 sentry_sdk.init(
