@@ -51,17 +51,17 @@ import sentry_sdk
 from sentry_sdk.integrations.django import DjangoIntegration
 from sentry_sdk.integrations.celery import CeleryIntegration
 
-def sentry_filter_transactions(event, hint):
-    if event['transaction'] == '/_health/':
-        return None
-    return event
+def traces_sampler(sampling_context):
+    if sampling_context.get('asgi_scope', {}).get('path', None) == '/_health/':
+        print('*** sentry suppressing /health/ transaction')
+        return 0.0
+    return 1.0
 
 sentry_sdk.init(
     dsn="https://f7a7fa7dfe5f412f852c3bfe2defa091@o968582.ingest.sentry.io/6742581",
     integrations=[DjangoIntegration(), CeleryIntegration()],
-    traces_sample_rate=1.0,
     send_default_pii=True,
-    before_send=sentry_filter_transactions
+    traces_sampler=traces_sampler,
 )
 
 # sentry setup end
