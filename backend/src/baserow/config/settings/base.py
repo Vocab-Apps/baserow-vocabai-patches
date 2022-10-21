@@ -37,7 +37,6 @@ from sentry_sdk.integrations.celery import CeleryIntegration
 
 def traces_sampler(sampling_context):
     if sampling_context.get('asgi_scope', {}).get('path', None) == '/_health/':
-        print('*** sentry suppressing /health/ transaction')
         return 0.0
     return 1.0
 
