@@ -23,7 +23,7 @@ from sentry_sdk.integrations.celery import CeleryIntegration
 def traces_sampler(sampling_context):
     if sampling_context.get('asgi_scope', {}).get('path', None) == '/_health/':
         return 0.001
-    pprint.pprint(sampling_context)
+    pprint.pprint(sampling_context, width=2000, compact=True)
     return 1.0
 
 sentry_sdk.init(
