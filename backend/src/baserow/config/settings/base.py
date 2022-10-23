@@ -6,6 +6,7 @@ from decimal import Decimal
 from ipaddress import ip_network
 from pathlib import Path
 from urllib.parse import urljoin, urlparse
+import pprint
 
 import dj_database_url
 from celery.schedules import crontab
@@ -37,7 +38,8 @@ from sentry_sdk.integrations.celery import CeleryIntegration
 
 def traces_sampler(sampling_context):
     if sampling_context.get('asgi_scope', {}).get('path', None) == '/_health/':
-        return 0.0
+        return 0.001
+    pprint.pprint(sampling_context)
     return 1.0
 
 sentry_sdk.init(
