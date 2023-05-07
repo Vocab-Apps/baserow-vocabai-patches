@@ -1,6 +1,6 @@
 export default {
-  title: 'Baserow',
-  titleTemplate: '%s // Baserow',
+  title: 'Vocab.Ai',
+  titleTemplate: '%s // Vocab.Ai',
   meta: [
     { charset: 'utf-8' },
     {
