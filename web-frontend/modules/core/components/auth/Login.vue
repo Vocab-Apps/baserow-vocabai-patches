@@ -3,7 +3,7 @@
     <div v-if="displayHeader">
       <div class="auth__logo">
         <nuxt-link :to="{ name: 'index' }">
-          <img src="@baserow/modules/core/static/img/logo.svg" alt="" />
+          <img src="@baserow/modules/core/static/img/vocabai_banner.png" alt="" />
         </nuxt-link>
       </div>
       <div class="auth__head">
