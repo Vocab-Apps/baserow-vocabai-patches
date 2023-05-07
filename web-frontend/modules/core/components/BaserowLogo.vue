@@ -1,13 +1,12 @@
 <template>
   <a
-    href="https://baserow.io"
+    href="https://app.vocab.ai"
     target="_blank"
-    title="Baserow - open source no-code database tool and Airtable alternative"
+    title="Vocab.Ai - the Language Learning Spreadsheet"
   >
     <img
-      height="14"
-      src="@baserow/modules/core/static/img/logo.svg"
-      alt="Baserow - open source no-code database tool and Airtable alternative"
+      src="@baserow/modules/core/static/img/vocabai_logo.png"
+      alt="Vocab.Ai - the Language Learning Spreadsheet"
     />
   </a>
 </template>
