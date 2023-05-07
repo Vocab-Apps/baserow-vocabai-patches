@@ -7,6 +7,7 @@
     <img
       src="@baserow/modules/core/static/img/vocabai_logo.png"
       alt="Vocab Words - the Language Learning Spreadsheet"
+      style="width: 110px;"
     />
   </a>
 </template>
