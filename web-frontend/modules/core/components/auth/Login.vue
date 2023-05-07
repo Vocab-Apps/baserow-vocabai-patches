@@ -6,7 +6,7 @@
       <div v-if="displayHeader">
         <div class="auth__logo">
           <nuxt-link :to="{ name: 'index' }">
-            <Logo />
+            <img src="@baserow/modules/core/static/img/vocabai_banner.png" alt="" />
           </nuxt-link>
         </div>
         <h1 class="auth__head-title">{{ $t('login.title') }}</h1>
