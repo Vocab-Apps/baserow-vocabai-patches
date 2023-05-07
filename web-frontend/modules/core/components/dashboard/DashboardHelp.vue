@@ -8,6 +8,7 @@
       <a href="https://lucw.medium.com/unlock-the-power-of-pinyin-vocab-ais-edc5db83a1a9" target="_blank">Chinese and Pinyin tutorial</a>
     </p>
     <i>note: Vocab.Ai is based on open-source database <a href="https://baserow.io" target="_blank">Baserow</a></i>
+  </div>
 </template>
 
 <script>
