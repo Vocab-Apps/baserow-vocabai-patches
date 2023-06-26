@@ -54,7 +54,7 @@ from sentry_sdk.integrations.celery import CeleryIntegration
 
 def traces_sampler(sampling_context):
     # this one appears very frequently
-    if sampling_context.get('asgi_scope', {}).get('path', None) == '/_health/':
+    if sampling_context.get('asgi_scope', {}).get('path', None) in ['/_health/', '/api/_health/']:
         return 0.001
         
     # the following are quite frequent
