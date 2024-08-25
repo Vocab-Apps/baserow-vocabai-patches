@@ -1,6 +1,6 @@
 export default {
-  title: 'Vocab.Ai',
-  titleTemplate: '%s // Vocab.Ai',
+  title: 'Vocab Words',
+  titleTemplate: '%s // Vocab Words',
   meta: [
     { charset: 'utf-8' },
     {
