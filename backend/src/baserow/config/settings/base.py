@@ -74,7 +74,7 @@ def traces_sampler(sampling_context):
 
 sentry_sdk.init(
     dsn="https://f7a7fa7dfe5f412f852c3bfe2defa091@o968582.ingest.sentry.io/6742581",
-    integrations=[DjangoIntegration(), CeleryIntegration()],
+    integrations=[DjangoIntegration(signals_spans=False, middleware_spans=False), CeleryIntegration()],
     send_default_pii=True,
     traces_sampler=traces_sampler,
 )
