@@ -266,6 +266,9 @@ else:
             "PASSWORD": os.getenv("DATABASE_PASSWORD", "baserow"),
             "HOST": os.getenv("DATABASE_HOST", "db"),
             "PORT": os.getenv("DATABASE_PORT", "5432"),
+            "TEST": {
+                "NAME": os.getenv("DATABASE_TEST_NAME", default="vocabai_words_test"),
+            },
         }
     }
     if "DATABASE_OPTIONS" in os.environ:
