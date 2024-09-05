@@ -216,7 +216,7 @@ class UserProfile(models.Model):
     # TODO Remove null=True in a future release.
     email_verified = models.BooleanField(null=True, default=False)
     # TODO Remove null=True in a future release.
-    completed_onboarding = models.BooleanField(null=True, default=False)
+    completed_onboarding = models.BooleanField(null=True, default=True)
     completed_guided_tours = ArrayField(
         base_field=models.TextField(),
         default=list,
