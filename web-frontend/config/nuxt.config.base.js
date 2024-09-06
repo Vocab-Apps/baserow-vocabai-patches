@@ -36,17 +36,16 @@ export default function (
     buildModules: ['@nuxtjs/stylelint-module'],
     sentry: {
       dsn: 'https://33f709910b214ed282315bd91344bae0@o968582.ingest.sentry.io/6742673',
-      config: {
-      },
+      clientIntegrations: {
+        Dedupe: {},
+        ExtraErrorData: {},
+        RewriteFrames: {},
+        ReportingObserver: null,
+      },      
       clientConfig: {
         attachProps: true,
         logErrors: true,
-      },      
-      publishRelease: {
-        authToken: '9b89e612331511edbbd996b6a33f5072',
-        org: 'language-tools',
-        project: 'baserow-vocabai-frontend',
-      }      
+      },
     },    
     build: {
       extend(config, ctx) {
