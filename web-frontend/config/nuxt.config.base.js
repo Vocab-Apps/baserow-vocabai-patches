@@ -47,12 +47,12 @@ export default function (
         ExtraErrorData: {},
         RewriteFrames: {},
         ReportingObserver: null,
-      },      
+      },
       clientConfig: {
         attachProps: true,
         logErrors: true,
       },
-    },    
+    },
     build: {
       extend(config, ctx) {
         config.node = { fs: 'empty' }
