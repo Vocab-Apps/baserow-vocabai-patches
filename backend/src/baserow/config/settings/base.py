@@ -64,13 +64,17 @@ def traces_sampler(sampling_context):
         'baserow.core.action.tasks.cleanup_old_actions',
         'baserow.core.trash.tasks.mark_old_trash_for_permanent_deletion',
         'baserow.core.trash.tasks.permanently_delete_marked_trash',
-        'baserow.contrib.database.export.tasks.clean_up_old_jobs'
+        'baserow.contrib.database.export.tasks.clean_up_old_jobs',
+        'baserow.core.notifications.tasks.beat_send_instant_notifications_summary_by_email',
+        'baserow.core.notifications.tasks.singleton_send_instant_notifications_summary_by_email',
+        'baserow.contrib.database.search.tasks.async_update_tsvector_columns',
+        'baserow.ws.tasks.broadcast_to_permitted_users'
     ]:
-        return 0.1
+        return 0.05
 
     # if more information is needed about transactions, uncomment the following
     #pprint.pprint(sampling_context, width=2000, compact=True)
-    return 1.0
+    return 0.5
 
 sentry_sdk.init(
     dsn="https://f7a7fa7dfe5f412f852c3bfe2defa091@o968582.ingest.sentry.io/6742581",
