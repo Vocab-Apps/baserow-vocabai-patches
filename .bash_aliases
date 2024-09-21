@@ -1,0 +1,1 @@
+alias regenerate_baserow_patch='git diff baserow-1.26.1..baserow-vocabai-patch-1.26.1 | sed "s:/deploy/all-in-one/:/:g" > ~/python/baserow-vocabai-plugin/plugins/baserow_vocabai_plugin/baserow-patches/baserow.patch'
