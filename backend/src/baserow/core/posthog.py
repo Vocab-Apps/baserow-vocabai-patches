@@ -68,7 +68,7 @@ def capture_user_event(
     if workspace is not None:
         properties["workspace_id"] = workspace.id
 
-    capture_event(user.id, event, properties)
+    capture_event(user.email, event, properties)
 
 
 @receiver(action_done)
