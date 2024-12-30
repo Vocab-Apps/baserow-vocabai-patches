@@ -31,7 +31,7 @@ export default function ({ app: { router, $config, store } }, inject) {
       // have changed accounts. This keeps the Posthog code isolated from the
       // authenticated system.
       if (isAuthenticated && userId !== posthog.get_distinct_id()) {
-        posthog.identify(userId, { user_email: userEmail })
+        posthog.identify(userEmail, { user_email: userEmail })
       }
 
       // Note: this might also be a good place to call posthog.register(...) in
