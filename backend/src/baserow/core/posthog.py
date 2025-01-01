@@ -30,7 +30,7 @@ def capture_event(distinct_id: str, event: str, properties: dict):
     try:
         posthog.capture(
             distinct_id=distinct_id,
-            event=event,
+            event=f'baserow:{event}',
             properties=properties,
         )
     except Exception as e:
