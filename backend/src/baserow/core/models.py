@@ -216,6 +216,7 @@ class UserProfile(models.Model):
     # TODO Remove null=True in a future release.
     email_verified = models.BooleanField(null=True, default=False)
     # TODO Remove null=True in a future release.
+    # vocab-words-patch: we don't want to do onboarding for new users
     completed_onboarding = models.BooleanField(null=True, default=True)
     completed_guided_tours = ArrayField(
         base_field=models.TextField(),

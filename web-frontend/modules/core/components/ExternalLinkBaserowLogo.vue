@@ -1,8 +1,8 @@
 <template>
   <a
-    href="https://app.vocab.ai"
+    href="https://words.vocab.ai"
     target="_blank"
-    title="Vocab.Ai - the Language Learning Spreadsheet"
+    title="Vocab Words - the Language Learning Spreadsheet"
   >
     <img
       src="@baserow/modules/core/static/img/vocabai_logo.png"

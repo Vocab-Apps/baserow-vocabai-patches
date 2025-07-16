@@ -7,7 +7,6 @@ from decimal import Decimal
 from ipaddress import ip_network
 from pathlib import Path
 from urllib.parse import urljoin, urlparse
-import pprint
 
 from django.core.exceptions import ImproperlyConfigured
 
@@ -235,9 +234,6 @@ else:
             "PASSWORD": os.getenv("DATABASE_PASSWORD", "baserow"),
             "HOST": os.getenv("DATABASE_HOST", "db"),
             "PORT": os.getenv("DATABASE_PORT", "5432"),
-            "TEST": {
-                "NAME": os.getenv("DATABASE_TEST_NAME", default="vocabai_words_test"),
-            },
         }
     }
     if "DATABASE_OPTIONS" in os.environ:
