@@ -45,6 +45,7 @@ BASEROW_TESTS_SETUP_DB_FIXTURE = str_to_bool(
 )
 DATABASES["default"]["TEST"] = {
     "MIGRATE": not BASEROW_TESTS_SETUP_DB_FIXTURE,
+    "NAME": os.getenv("DATABASE_TEST_NAME", "vocabai_words_test"), # set test database name (default is to use regular name + test_ prefix)
 }
 
 # Open a second database connection that can be used to test transactions.
